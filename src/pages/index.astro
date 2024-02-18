@@ -1,0 +1,96 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import AboutMeIcon from "@/components/icons/About.astro";
+import Badge from "@/components/Badge.astro";
+import BriefCase from "@/components/icons/BriefCase.astro";
+import Experience from "@/components/Experience.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
+import Linkedin from "@/components/icons/Linkedin.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import Projects from "@/components/Projects.astro";
+import ProjectsIcon from "@/components/icons/Code.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import SocialPill from "@/components/SocialPill.astro";
+---
+
+<Layout
+  title="Portfolio de Sebastian Gutierrez - Desarrollador y Programador Web con 2 años de experiencia"
+  description="Contrata a Sebastian Gutierrez para crear tu aplicacion web. Desarrollador Web. Especializado en crear aplicaciones únicas."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 pb-36">
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, I'm Sebastian!
+        <a
+          href="https://www.linkedin.com/in/sebastiangpg/"
+          target="_blank"
+          rel="nonpeer"
+          class="flex justify-center items-center"
+        >
+          <Badge>Open to opportunities</Badge>
+        </a>
+      </h1>
+      <h2 aria-colcount="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <span class="opacity-75">+1 Years experience.</span>
+        <span class="text-[#F9FF00]">
+           Engineer and Web developer.</span
+        >
+        <span class="opacity-75">From Palmira,</span>
+        <span class="text-yellow-300"
+          >Col<span class="text-blue-300">om</span><span class="text-red-300"
+            >bia.</span
+          ></span
+        >
+        <span class="opacity-75">
+          Specialized in delivering unique user experiences through the
+          development of tailored applications.
+        </span>
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://github.com/sebastiangt06 ">
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+
+        <SocialPill href="https://www.linkedin.com/in/sebastiangpg/">
+          <Linkedin class="size-4 md:size-6" />LinkedIn
+        </SocialPill>
+
+        <SocialPill href="mailto:segutierrezpe@unal.edu.co">
+          <MailIcon class="size-4 md:size-6" />segutierrezpe@unal.edu.co
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+    
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <h2 class="flex items-center text-3xl font-semibold mb-6 gap-x-3">
+        <BriefCase class="size-7" />
+        Work Experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2 class="flex items-center text-3xl font-semibold mb-6 gap-x-3">
+        <ProjectsIcon class="size-7" />
+        Projects
+      </h2>
+      <h3 class=" text-[#F9FF00] font-semibold mb-6 flex gap-x-3 items-center" >These are some of my projects, you can find more if you hit the GitHub button in the top of the page</h3>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2 class="flex items-center text-3xl font-semibold mb-6 gap-x-3">
+        <AboutMeIcon class="size-7" />
+        About me
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+  </div>
+  </main>
+</Layout>

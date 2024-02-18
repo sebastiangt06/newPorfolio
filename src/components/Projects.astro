@@ -1,0 +1,148 @@
+---
+import LinkButton from "./LinkButton.astro";
+import GitHub from "./icons/GitHub.astro";
+import NextIcon from "./icons/Next.astro";
+import TailwindIcon from "./icons/Tailwind.astro";
+import WebsiteIcon from "./icons/WebsiteIcon.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import ReactIcon from "./icons/React.astro";
+import ExpressIcon from "./icons/Express.astro";
+import NodeIcon from "./icons/Node.astro";
+import BootstrapIcon from "./icons/Bootstrap.astro";
+import MongoIcon from "./icons/Mongo.astro";
+import CSSIcon from "./icons/CSS.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.Js",
+    class: "bg-black text-white",
+    icon: NextIcon,
+  },
+  TAILWIND: {
+    name: "TailwindCSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#6D3A91]/30 text-white",
+    icon: AstroIcon,
+  },
+  REACT: {
+    name: "React.Js",
+    class: "bg-[#003159] text-white",
+    icon: ReactIcon,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-[#6D3A91]/30 text-white",
+    icon: AstroIcon,
+  },
+  EXPRESS: {
+    name: "Express.Js",
+    class: "bg-slate-700 text-white",
+    icon: ExpressIcon,
+  },
+  NODE: {
+    name: "Node.Js",
+    class: "bg-[#86CF44]/30 text-white",
+    icon: NodeIcon,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#6D3A91]/30 text-white",
+    icon: BootstrapIcon,
+  },
+  MONGO: {
+    name: "MongoDB",
+    class: "bg-[#86CF44]/30 text-white",
+    icon: MongoIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#003159] text-white",
+    icon: CSSIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Tesla Clone",
+    description:
+      "A cloned webpage of the original Tesla landing page from June 2023, built with Astro and TailwindCSS.",
+    link: "https://tesla-clone-nu-two.vercel.app/",
+    github: "https://github.com/sebastiangt06/tesla-clone",
+    image: "/projects/projectTesla.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+  },
+  {
+    title: "Warbug E-commerce",
+    description:
+      "E-commerce store with login system and admin panel for sales tracking and totals. Built with React.js, Bootstrap, HTML, CSS, Node.js (Express.js), MongoDB.",
+    link: "",
+    github: "#",
+    image: "/projects/projectWarbugstore.webp",
+    tags: [TAGS.REACT, TAGS.EXPRESS, TAGS.BOOTSTRAP, TAGS.MONGO, TAGS.NODE],
+  },
+  {
+    title: "Weather-me!",
+    description:
+      "A weather application developed with React.js, leveraging custom hooks like useRef, useCallback, and useMemo, and integrated with the OpenWeather API.",
+    link: "https://weatherapp-olive-eta.vercel.app/",
+    github: "https://github.com/sebastiangt06/weatherapp",
+    image: "/projects/projectWeatherapp.webp",
+    tags: [TAGS.REACT, TAGS.CSS],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ title, description, tags, image, github, link }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              src={image}
+              alt={title}
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-100 mb-2">{title}</h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2 ">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag?.class} py-1 px-2`}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag?.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-2 text-gray-400 ">{description}</div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <WebsiteIcon class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

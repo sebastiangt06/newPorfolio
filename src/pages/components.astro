@@ -1,0 +1,28 @@
+---
+import SectionContainer from "@/components/SectionContainer.astro";
+import Linkedin from "@/components/icons/Linkedin.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import Badge from "@/components/Badge.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="Design System Porfolio Sebastian"
+  description="Catalogo de componentes de nuestro porfolio"
+>
+  <SectionContainer class="py-44 pb-32 flex flex-col gap-y-10">
+    <article class="mb-10">
+      <h1 class="mb-4 text-xl font-semibold">&lt;Badge&gt;</h1>
+      <Badge>Tailwind</Badge>
+    </article>
+
+    <article class="mb-10">
+      <h1 class="mb-4 text-xl font-semibold" >&lt;Social Pill&gt;</h1>
+      <div class="flex">
+        <SocialPill href="https://www.linkedin.com/in/sebastiangpg/">
+          <Linkedin class="size-4 md:size-6" />LinkedIn
+        </SocialPill>
+      </div>
+    </article>
+  </SectionContainer>
+</Layout>
